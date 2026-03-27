@@ -35,7 +35,7 @@ class HomeScreen extends StatelessWidget {
                   children: [
                     Row(
                       children: const [
-                        Text("☀️", style: TextStyle(fontSize: 40)),
+                        Icon(Icons.wb_sunny, size: 40, color: Colors.orange),
                         SizedBox(width: 15),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -61,14 +61,14 @@ class HomeScreen extends StatelessWidget {
                     crossAxisSpacing: 10,
                     mainAxisSpacing: 10,
                     children: const [
-                      ForecastCard("10:00", "☀️", "26°C"),
-                      ForecastCard("11:00", "☀️", "27°C"),
-                      ForecastCard("12:00", "☁️", "25°C"),
-                      ForecastCard("13:00", "☁️", "24°C"),
-                      ForecastCard("14:00", "☀️", "25°C"),
-                      ForecastCard("15:00", "☁️", "24°C"),
-                      ForecastCard("16:00", "☁️", "23°C"),
-                      ForecastCard("17:00", "🌧️", "22°C"),
+                      ForecastCard("10:00", Icons.wb_sunny, "26°C"),
+                      ForecastCard("11:00", Icons.wb_sunny, "27°C"),
+                      ForecastCard("12:00", Icons.cloud, "25°C"),
+                      ForecastCard("13:00", Icons.cloud, "24°C"),
+                      ForecastCard("14:00", Icons.wb_sunny, "25°C"),
+                      ForecastCard("15:00", Icons.cloud, "24°C"),
+                      ForecastCard("16:00", Icons.cloud, "23°C"),
+                      ForecastCard("17:00", Icons.grain, "22°C"),
                     ],
                   ),
                 ],
