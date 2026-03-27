@@ -2,32 +2,47 @@ import 'package:flutter/material.dart';
 
 class ForecastCard extends StatelessWidget {
   final String time;
-  final String icon;
+  final IconData icon;
   final String temp;
+
   const ForecastCard(this.time, this.icon, this.temp, {super.key});
 
-@override
-Widget build(BuildContext context) {
-  return Container(
-    padding: const EdgeInsets.all(8),
-    decoration: BoxDecoration(
-    color: Colors.white,
-    borderRadius: BorderRadius.circular(15),
-      boxShadow: [
-        BoxShadow(
-          blurRadius: 5,
-          color: Colors.black.withOpacity(0.1),
-        )
-      ],
-    ),
-    child: Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+  Color _getIconColor(IconData icon) {
+    if (icon == Icons.wb_sunny) return Colors.orange;
+    if (icon == Icons.cloud) return Colors.grey;
+    if (icon == Icons.grain) return Colors.blue;
+    return Colors.black;
+  }
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(8),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(15),
+        boxShadow: [
+          BoxShadow(
+            blurRadius: 5,
+            color: Colors.black.withOpacity(0.1),
+          )
+        ],
+      ),
+
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(time, style: const TextStyle(fontSize: 12)),
-          Text(icon, style: const TextStyle(fontSize: 18)),
+
+          Icon(
+                icon,
+                size: 20,
+                color: _getIconColor(icon),
+              ),
+
+          
           Text(temp,
-          style:
-          const TextStyle(fontSize: 12, fontWeight: FontWeight.bold)),
+              style: const TextStyle(
+                  fontSize: 12, fontWeight: FontWeight.bold)),
         ],
       ),
     );
